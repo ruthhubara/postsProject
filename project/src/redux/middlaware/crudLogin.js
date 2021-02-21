@@ -4,17 +4,12 @@ import { actionsUser } from "../actions/userAction";
 export const login = ({ dispatch, getState }) => next => action => {
     if (action.type === 'LOGIN') {
         const u = action.payload
-        // const history = useHistory()
         const user = { userName: u.userName, password: u.password }
 
         fetch('http://localhost:3001/login/', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
-            // headers: {
-            //     // Authorization: TokenToString,
-            //     Accept: 'application/json',
-            //     'Content-Type': 'application/json'
-            // },
+  
             body: JSON.stringify(user)
 
         })
@@ -41,13 +36,3 @@ export const login = ({ dispatch, getState }) => next => action => {
 
     return next(action);
 };
-// sendNotificationHttp=()=>{
-//     debugger;
-//    const data =  {title:this.state.title , body:this.state.body }
-//     axios.get(`http://localhost:9000/tokens/sendNotification`,data)
-//     .then(response => {
-//         console.log(response.data);
-//     }).catch(err => {
-//         console.log("err ", err)
-//     })
-// }

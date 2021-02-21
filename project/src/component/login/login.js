@@ -12,8 +12,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    // setUserName: (name) => dispatch(actionsUser.setUserName(name)),
-    // setPassword: (password) => dispatch(actionsUser.setUserPassword(password)),
     login: (user) => dispatch(actionsUser.login(user))
 }
 )
@@ -52,7 +50,6 @@ function Login(props) {
     return (
         <>
 
-            {/* <form style={{ color: "green" }} onSubmit={handleSubmit(SignIn)}  > */}
 
             <form className='col-3' style={{ color: "green", marginTop: 100, marginLeft: 550 }} onSubmit={handleSubmit(SignIn)}  >
                 <svg style={{ width: 200, height: 200 }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
@@ -115,17 +112,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
 
 
 
-{/* <div className = "col-3" style = {{color: "green", marginLeft: 550}}>
-<h2 style={{  color: "red" }}>{state.flash}</h2>‏
-
-     <div className="form-group" >
-         <label >שם משתמש</label>
-         <input type="text" value = {user.name} class="form-control" id="userName" onChange = {(e) => setName(e.target.value)} placeholder="שם משתמש" />
-     </div>
-     <div class="form-group">
-         <label >סיסמא</label>
-         <input type="password" value = {user.password} class="form-control" id="userPassword" onChange = {(e) => setPassword(e.target.value)} placeholder="סיסמא" />
-     </div>
-     <button  class="btn btn-success" onClick = {logIn}>הכנס</button>
- </div>
-</> */}

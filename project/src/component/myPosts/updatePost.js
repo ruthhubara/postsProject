@@ -11,8 +11,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    // setUserName: (name) => dispatch(actionsUser.setUserName(name)),
-    // setPassword: (password) => dispatch(actionsUser.setUserPassword(password)),
     setTitle: (title) => dispatch(actionsPost.setTitle(title)),
     setBody: (body) => dispatch(actionsPost.setBody(body))
 
@@ -23,7 +21,6 @@ function UpdatePost(props) {
     const titleRef = React.createRef()
     const bodyRef = React.createRef()
     const { post, setTitle, setBody } = props
-    // const { handleSubmit, reset, pristine, submitting, valid } = props;
     const { handleSubmit, reset, pristine, submitting, valid } = props;
 
     debugger
@@ -43,12 +40,7 @@ function UpdatePost(props) {
                 'Authorization': localStorage.getItem('token'),
 
             },
-            //     // Authorization: TokenToString,
-            //     "Content-Type": "application/json"
-
-            //     // 'Content-Type': 'application/json',
-            //     // "Access-Control-Allow-Methods"
-            // },
+           
             body: JSON.stringify(postToUpdate)
 
         })

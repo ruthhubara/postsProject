@@ -5,6 +5,7 @@ import {
     Switch,
     Link
 } from "react-router-dom";
+import { connect } from 'react-redux';
 import Login from '../component/login/login';
 import Posts from '../component/posts';
 import MyPosts from '../component/myPosts/myPosts';
@@ -13,12 +14,17 @@ import UpdatePost from '../component/myPosts/updatePost'
 import NewPost from '../component/newPost/newPost';
 import './nav.css';
 import newPost from '../component/newPost/newPost';
-
-export default function RoutesNav() {
-
+function mapStateToProps(state) {
+    return {
+        user: state.userReducer.user,
+    }
+}
+export default connect(mapStateToProps, null)(function RoutesNav(props) {
+    const { user } = props
     return (
         <div>
             <Router>
+                {/* <h1>{user.userName}</h1> */}
                 <Nav />
                 <Switch>
                     {/* <Route path="/">
@@ -43,7 +49,7 @@ export default function RoutesNav() {
             </Router>
         </div>
     )
-}
+})
 
 
 function Nav() {
@@ -63,10 +69,11 @@ function Nav() {
                     <li>
                         <Link to="/newPost">New post</Link>
                     </li>
+
                 </ul>
             </nav>
             <br></br>
-            
+
         </>
     )
 }

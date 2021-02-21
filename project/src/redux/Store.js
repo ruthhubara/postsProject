@@ -6,7 +6,6 @@ import { reducer as formReducer } from 'redux-form';
 import { login } from './middlaware/crudLogin'
 import { addUser } from './middlaware/crudAddUser'
 
-// import axios from 'axios'
 const reducer = combineReducers({ userReducer, postReducer, form: formReducer })
 
 const store = createStore(reducer, applyMiddleware(login, addUser))

@@ -10,7 +10,6 @@ function App() {
       <Router>
         <Redirect to="/"></Redirect>
 
-      {/* <RoutesNav /> */}
 
 
         <Switch>

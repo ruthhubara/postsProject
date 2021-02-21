@@ -9,8 +9,7 @@ function mapStateToProps(state) {
     }
 }
 const mapDispatchToProps = (dispatch) => ({
-    // setUserName: (name) => dispatch(actionsUser.setUserName(name)),
-    // setPassword: (password) => dispatch(actionsUser.setUserPassword(password)),
+   
     setPost: (post) => dispatch(actionsPost.setPost(post))
 }
 )
@@ -59,13 +58,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(function MyPosts(pro
                 'Authorization': localStorage.getItem('token'),
 
             },
-            //     // Authorization: TokenToString,
-            //     "Content-Type": "application/json"
-
-            //     // 'Content-Type': 'application/json',
-            //     // "Access-Control-Allow-Methods"
-            // },
-
+       
         })
 
             .then((res) => res.json()).then((resJson) => {
@@ -100,20 +93,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(function MyPosts(pro
                 {
 
                     myPosts[0] && myPosts.map((post) =>
-                        // <div key={post._id} className="col-3" className="card border-success mb-3" style="max-width: 18rem;">
-                        //     <div className="card-header">Header</div>
-                        //     <div className="card-body text-success">
-
-                        //         <h5 className="card-title ">{post.title}</h5>
-                        //         <p className="card-text">{post.body}</p>
-
-                        //         {/* <button onClick={() => deletePost(post._id)}>delete</button> */}
-                        //         <button type="button" onClick={() => deletePost(post._id)} className="btn btn-outline-success">delete</button>
-                        //         <button type="button" onClick={() => updatePost(post)} className="btn btn-outline-success">update</button>
-
-                        //         {/* <button onClick={() => updatePost(post)}>update</button> */}
-                        //     </div>
-                        // </div>
+                       
 
                         <div key={post._id} className="card border-success mb-3 ml-2 mr-2" style={{ maxWidth: '18rem', color: 'green' }}>
                             <div className="card-header"><svg style={{ marginLeft: 0 }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4" viewBox="0 0 16 16">

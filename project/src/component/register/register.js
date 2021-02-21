@@ -13,8 +13,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    // setUserName: (name) => dispatch(actionsUser.setUserName(name)),
-    // setPassword: (password) => dispatch(actionsUser.setUserPassword(password)),
+   
     AddUser: (user) => dispatch(actionsUser.addUser(user))
 }
 )

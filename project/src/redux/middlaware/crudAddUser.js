@@ -9,13 +9,8 @@ export const addUser = ({ dispatch, getState }) => next => action => {
         fetch('http://localhost:3001/AddUser', {
             method: 'post',
             headers: { 'Content-Type': 'application/json',
-                            // Authorization: TokenToString,
          },
-            // headers: {
-            //     // Authorization: TokenToString,
-            //     Accept: 'application/json',
-            //     'Content-Type': 'application/json'
-            // },
+         
             body: JSON.stringify(user)
 
         })
